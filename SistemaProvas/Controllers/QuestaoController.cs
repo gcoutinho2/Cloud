@@ -1,4 +1,5 @@
-﻿using SistemaProvas.Models;
+﻿using SistemaProvas.BD;
+using SistemaProvas.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,15 +12,11 @@ namespace SistemaProvas.Controllers
 {
     public class QuestaoController : ApiController
     {
-        string conexao = "Server=tcp:aulacloud.database.windows.net,1433;Initial Catalog=aulaCloud;Persist Security Info=False;User ID=gcoutinho@aulaCloud;Password=Coutinho20;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
         [HttpPost]
         public void Criar([FromBody]Questao questao)
         {
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO tbQuestao (Nome, Enunciado) VALUES (@nome, @enunciado)", conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", questao.Nome);
@@ -33,10 +30,8 @@ namespace SistemaProvas.Controllers
         [HttpPost]
         public bool Alterar([FromBody]Questao questao)
         {
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("UPDATE tbQuestao SET Nome = @nome, Enunciado = @enunciado WHERE IdQuestao = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", questao.Nome);
@@ -52,10 +47,8 @@ namespace SistemaProvas.Controllers
         //Remover via Header
         public bool Remover(int id)
         {
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("DELETE FROM tbQuestao WHERE IdQuestao = @id", conn))
 
                 {
