@@ -1,5 +1,5 @@
 CREATE TABLE tbProva (
-	IdProva INT IDENTITY(1,100) NOT NULL,
+	IdProva INT IDENTITY(1,1) NOT NULL,
 	Nome NVARCHAR(80) NOT NULL,
 	DataAplicacao DATETIME NOT NULL,
 
@@ -7,7 +7,7 @@ CREATE TABLE tbProva (
 );
 
 CREATE TABLE tbProvaQuestao(
-	IdProvaQuestao INT IDENTITY(1,100) NOT NULL,
+	IdProvaQuestao INT IDENTITY(1,1) NOT NULL,
 	Valor FLOAT NOT NULL,
 	IdProva INT,
 	IdQuestao INT,
@@ -19,7 +19,7 @@ CREATE TABLE tbProvaQuestao(
 
 
 CREATE TABLE tbQuestao (
-	IdQuestao INT IDENTITY(1,100) NOT NULL,
+	IdQuestao INT IDENTITY(1,1) NOT NULL,
 	Nome NVARCHAR(80) NOT NULL,
 	Enunciado NVARCHAR(100) NOT NULL,
 
@@ -28,7 +28,7 @@ CREATE TABLE tbQuestao (
 
 
 CREATE TABLE tbAlunoProvaQuestao(
-	IdAlunoProvaQuestao INT IDENTITY(1,100) NOT NULL,
+	IdAlunoProvaQuestao INT IDENTITY(1,1) NOT NULL,
 	Resposta NVARCHAR(100) NOT NULL,
 	Nota FLOAT NOT NULL,
 	IdProvaQuestao INT,
@@ -40,7 +40,7 @@ CREATE TABLE tbAlunoProvaQuestao(
 );
 
 CREATE TABLE tbAluno(
-	IdAluno INT IDENTITY(1,100) NOT NULL,
+	IdAluno INT IDENTITY(1,1) NOT NULL,
 	Nome NVARCHAR(80) NOT NULL,
 	Email NVARCHAR(80) NOT NULL,
 	RA NVARCHAR(80) NOT NULL,
@@ -49,3 +49,9 @@ CREATE TABLE tbAluno(
 );
 
 select * from tbProvaQuestao;
+SELECT * FROM tbProva;
+SELECT * FROM tbQuestao;
+SELECT * FROM tbProvaQuestao;
+
+INSERT INTO tbQuestao (Nome,Enunciado) VALUES ('Questão Logica','blablbalbalblablbalabablabllba');
+INSERT INTO tbProvaQuestao (Valor,IdProva,IdQuestao) VALUES (8,1,101);
