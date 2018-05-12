@@ -1,4 +1,5 @@
-﻿using SistemaProvas.Models;
+﻿using SistemaProvas.BD;
+using SistemaProvas.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,16 +12,12 @@ namespace SistemaProvas.Controllers
 {
     public class ProvaController : ApiController
     {
-        string conexao = "Server=tcp:aulacloud.database.windows.net,1433;Initial Catalog=aulaCloud;Persist Security Info=False;User ID=gcoutinho@aulaCloud;Password=Coutinho20;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
         [HttpPost]
         public void CriarProva([FromBody] Prova prova)
         {
 
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProva (Nome, DataAplicacao) VALUES (@nome, @data)", conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", prova.Nome);
@@ -35,9 +32,8 @@ namespace SistemaProvas.Controllers
         [HttpPost]
         public bool EditarProva([FromBody] Prova prova)
         {
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(@"
                     UPDATE tbProva SET 
@@ -61,14 +57,12 @@ namespace SistemaProvas.Controllers
         //Remover via Header
         public bool RemoverProva(int id)
         {
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection conn = SqlConn.Abrir())
             {
-                conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(@"
                     DELETE FROM tbProva
                     WHERE IdProva = @id", conn))
-
                 {
                     cmd.Parameters.AddWithValue("@id", id);
 
