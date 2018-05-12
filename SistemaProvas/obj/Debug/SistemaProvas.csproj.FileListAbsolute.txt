@@ -257,3 +257,4 @@ C:\workspace\SistemasProva\Cloud\SistemaProvas\bin\pt-br\System.Web.Http.WebHost
 C:\workspace\SistemasProva\Cloud\SistemaProvas\obj\Debug\SistemaProvas.csproj.CoreCompileInputs.cache
 C:\workspace\SistemasProva\Cloud\SistemaProvas\obj\Debug\SistemaProvas.dll
 C:\workspace\SistemasProva\Cloud\SistemaProvas\obj\Debug\SistemaProvas.pdb
+C:\workspace\SistemasProva\Cloud\SistemaProvas\obj\Debug\SistemaProvas.csprojResolveAssemblyReference.cache
