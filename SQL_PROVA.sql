@@ -53,5 +53,23 @@ SELECT * FROM tbProva;
 SELECT * FROM tbQuestao;
 SELECT * FROM tbProvaQuestao;
 
+-- DELETANDO CONSTRAINT
+ALTER TABLE tbProva DROP CONSTRAINT PK_Prova_Id;
+ALTER TABLE tbProvaQuestao DROP CONSTRAINT PK_ProvaQuestao_IdProvaQuestao;
+ALTER TABLE tbProvaQuestao DROP CONSTRAINT FK_ProvaQuestao_Prova;
+ALTER TABLE tbProvaQuestao DROP CONSTRAINT FK_ProvaQuestao_Questao;
+ALTER TABLE tbQuestao DROP CONSTRAINT PK_Questao_Id;
+ALTER TABLE tbAlunoProvaQuestao DROP CONSTRAINT PK_AlunoProvaQuestao_IdAlunoProvaQuestao;
+ALTER TABLE tbAlunoProvaQuestao DROP CONSTRAINT FK_AlunoProvaQuestao;
+ALTER TABLE tbAlunoProvaQuestao DROP CONSTRAINT FK_AlunoProvaQuestao_IdAluno;
+ALTER TABLE tbAluno DROP CONSTRAINT PK_Prova_IdAluno;
+
+-- DELETANDO TABLES
+drop table tbProva;
+drop table tbProvaQuestao;
+drop table tbQuestao;
+drop table tbAlunoProvaQuestao;
+drop table tbAluno;
+
 INSERT INTO tbQuestao (Nome,Enunciado) VALUES ('Questão Logica','blablbalbalblablbalabablabllba');
 INSERT INTO tbProvaQuestao (Valor,IdProva,IdQuestao) VALUES (8,1,101);

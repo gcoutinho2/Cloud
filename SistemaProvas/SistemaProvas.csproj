@@ -116,6 +116,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\AlunoProvaQuestao.cs" />
     <Compile Include="Models\NotaAlunoProvaQuestao.cs" />
     <Compile Include="Models\Prova.cs" />
     <Compile Include="Models\ProvaQuestao.cs" />

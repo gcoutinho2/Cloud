@@ -8,6 +8,8 @@ namespace SistemaProvas.Models
     public class ProvaQuestao
     {
         public int IdProvaQuestao { get; set; }
-        public double Nota { get; set; }
+        public int IdProva { get; set; }
+        public int IdQuestao { get; set; }
+        public double Valor { get; set; }
     }
 }

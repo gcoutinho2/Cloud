@@ -13,7 +13,7 @@ namespace SistemaProvas.Controllers
     public class QuestaoController : ApiController
     {
         [HttpPost]
-        public void Criar([FromBody]Questao questao)
+        public void CriarQuestao([FromBody]Questao questao)
         {
             using (SqlConnection conn = SqlConn.Abrir())
             {
@@ -28,7 +28,7 @@ namespace SistemaProvas.Controllers
         }
 
         [HttpPost]
-        public bool Alterar([FromBody]Questao questao)
+        public bool AlterarQuestao([FromBody]Questao questao)
         {
             using (SqlConnection conn = SqlConn.Abrir())
             {
@@ -45,7 +45,7 @@ namespace SistemaProvas.Controllers
 
         [HttpGet]
         //Remover via Header
-        public bool Remover(int id)
+        public bool RemoverQuestao(int id)
         {
             using (SqlConnection conn = SqlConn.Abrir())
             {

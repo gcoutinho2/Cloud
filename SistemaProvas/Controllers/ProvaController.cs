@@ -74,18 +74,18 @@ namespace SistemaProvas.Controllers
 
 
         [HttpPost]
-        public void AssociarQuestãoProva([FromBody] Prova prova, ProvaQuestao provaQuestao)
+        public void AssociarQuestaoProva([FromBody] ProvaQuestao provaQuestao)
         {
 
             using (SqlConnection conn = SqlConn.Abrir())
                 
             {
                 //(8, 1, 101)
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProvaQuestao (Valor, IdProva, IdQuestao ) VALUES (@Valor, @IdProva, @IdQuestao)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProvaQuestao (Valor, IdProva, IdQuestao) VALUES (@Valor, @IdProva, @IdQuestao)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@Valor", provaQuestao.Nota);
-                    cmd.Parameters.AddWithValue("@IdProva", prova.IdProva);
-                    cmd.Parameters.AddWithValue("@IdQuestao", provaQuestao.IdProvaQuestao);
+                    cmd.Parameters.AddWithValue("@Valor", provaQuestao.Valor);
+                    cmd.Parameters.AddWithValue("@IdProva", provaQuestao.IdProva);
+                    cmd.Parameters.AddWithValue("@IdQuestao", provaQuestao.IdQuestao);
 
                     cmd.ExecuteNonQuery();
                 }
