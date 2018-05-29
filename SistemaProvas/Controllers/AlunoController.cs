@@ -45,7 +45,6 @@ namespace SistemaProvas.Controllers
                 }
             }
         }
-        //amauri viado
 
         [HttpPost]
         //Remover via Body
