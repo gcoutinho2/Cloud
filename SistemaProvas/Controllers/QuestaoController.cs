@@ -17,10 +17,10 @@ namespace SistemaProvas.Controllers
         {
             using (SqlConnection conn = SqlConn.Abrir())
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbQuestao (Nome, Enunciado) VALUES (@nome, @enunciado)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbQuestao (Nome, Enunciado) VALUES (@Nome, @Enunciado)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome", questao.Nome);
-                    cmd.Parameters.AddWithValue("@enunciado", questao.Enunciado);
+                    cmd.Parameters.AddWithValue("@Nome", questao.Nome);
+                    cmd.Parameters.AddWithValue("@Enunciado", questao.Enunciado);
 
                     cmd.ExecuteNonQuery();
                 }

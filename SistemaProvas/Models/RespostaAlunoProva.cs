@@ -8,6 +8,8 @@ namespace SistemaProvas.Models
     public class RespostaAlunoProva
     {
         public int IdAluno { get; set; }
+
+        public int IdProva { get; set; }
         public RespostaAluno[] Respostas { get; set; }
     }
 }

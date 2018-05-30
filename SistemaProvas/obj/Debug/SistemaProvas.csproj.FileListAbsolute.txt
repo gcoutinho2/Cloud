@@ -340,7 +340,7 @@ C:\workspace\Cloud\Cloud\SistemaProvas\bin\pt-br\System.Web.Mvc.resources.dll
 C:\workspace\Cloud\Cloud\SistemaProvas\bin\pt-br\System.Net.Http.Formatting.resources.dll
 C:\workspace\Cloud\Cloud\SistemaProvas\bin\pt-br\System.Web.Http.resources.dll
 C:\workspace\Cloud\Cloud\SistemaProvas\bin\pt-br\System.Web.Http.WebHost.resources.dll
-C:\workspace\Cloud\Cloud\SistemaProvas\obj\Debug\SistemaProvas.csproj.CoreCompileInputs.cache
-C:\workspace\Cloud\Cloud\SistemaProvas\obj\Debug\SistemaProvas.csproj.CopyComplete
 C:\workspace\Cloud\Cloud\SistemaProvas\obj\Debug\SistemaProvas.dll
 C:\workspace\Cloud\Cloud\SistemaProvas\obj\Debug\SistemaProvas.pdb
+C:\workspace\Cloud\Cloud\SistemaProvas\bin\roslyn\System.Collections.Immutable.dll
+C:\workspace\Cloud\Cloud\SistemaProvas\obj\Debug\SistemaProvas.csprojResolveAssemblyReference.cache

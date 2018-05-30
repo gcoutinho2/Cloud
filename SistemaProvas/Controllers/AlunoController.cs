@@ -46,7 +46,7 @@ namespace SistemaProvas.Controllers
             }
         }
 
-        [HttpPost]
+        /*[HttpPost]
         //Remover via Body
         public bool DeletarAluno([FromBody] Aluno aluno)
         {
@@ -61,7 +61,7 @@ namespace SistemaProvas.Controllers
                     return (cmd.ExecuteNonQuery() == 1);
                 }
             }
-        }
+        }*/
 
         [HttpGet]
         //Remover via Header

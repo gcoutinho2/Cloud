@@ -78,9 +78,8 @@ namespace SistemaProvas.Controllers
         {
 
             using (SqlConnection conn = SqlConn.Abrir())
-                
+
             {
-                //(8, 1, 101)
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProvaQuestao (Valor, IdProva, IdQuestao) VALUES (@Valor, @IdProva, @IdQuestao)", conn))
                 {
                     cmd.Parameters.AddWithValue("@Valor", provaQuestao.Valor);
@@ -92,6 +91,27 @@ namespace SistemaProvas.Controllers
             }
 
         }
+
+        [HttpPost]
+        public void AtribuirRespostaProva([FromBody] AlunoProvaQuestao alunoProva)
+        {
+
+            using (SqlConnection conn = SqlConn.Abrir())
+
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbAlunoProvaQuestao (Resposta, Nota, IdProvaQuestao, IdAluno) VALUES (@Resp, @Nota, @IdProvaQuestao, @IdAluno)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Resp", alunoProva.Resposta);
+                    cmd.Parameters.AddWithValue("@Nota", 0);
+                    cmd.Parameters.AddWithValue("@IdProvaQuestao", alunoProva.IdProvaQuestao);
+                    cmd.Parameters.AddWithValue("@IdAluno", alunoProva.IdAluno);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+
 
     }
 }
