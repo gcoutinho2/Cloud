@@ -27,7 +27,7 @@ namespace SistemaProvas.Models
 
             using (SqlCommand cmd = new SqlCommand(@"SELECT AlunoProvaQuestao FROM 
                                                     idAluno = @idAluno, 
-                                                    idProvaQuestao = @idProvaQuestao", conn))
+                                                    idProvaQuestao = @idProvaQuestao"))//, conn))
             {
                 cmd.Parameters.AddWithValue("@idAluno", aluno.IdAluno);
                 cmd.Parameters.AddWithValue("@idProvaQuesta", prova.IdProva);
